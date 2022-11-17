@@ -1,0 +1,75 @@
+html, body {
+    margin: 0;
+    height: 100%;
+    font-family: 'Poppins';
+}
+
+h1 {
+    font-family: 'Poppins';
+}
+
+.noselect {
+    user-select: none;
+}
+
+.target {
+    height: 100px;
+    width: 100px;
+    color: #f6a334;
+    z-index: 99;
+}
+
+.exercice1 {
+    background-color: #ecf0f1;
+    height: 550px;
+    width: 700px;
+}
+
+
+.dropZone {
+    width: 100px;
+    height: 100px;
+    border: solid black;
+}
+
+.disable {
+    display: none;
+}
+
+.menu {
+    background-color: #1d4e9c;
+    height: 100%;
+}
+
+
+header, .header {
+    background-color: #194f9c;
+    height: 10em;
+    flex-direction: row;
+}
+
+.side-menu {
+    height: 100%;
+}
+
+.sidebar-links, a {
+    color: #1d4e9c;
+}
+
+.menu-item {
+    background-color: #ecf0f1;
+}
+
+header .title, .header .title {
+    color: #ffffff;
+}
+
+#gameEnd {
+    opacity: 1;
+    transition: opacity 1s;
+    z-index: 100;
+}
+
+#gameEnd.fade {
+    opacity: 0;
+}
