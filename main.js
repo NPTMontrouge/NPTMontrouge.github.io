@@ -22,7 +22,7 @@ function checkWin() {
     var currentDifficulty = document.getElementById('difficulty');
     console.log(currentDifficulty.value);
     if ((score % maxScore)==0 && nbDifficulties>currentDifficulty.value) {
-        increaseDifficulty();
+      increaseDifficulty();
     }else if((score % maxScore)==0 && nbDifficulties==currentDifficulty.value){
       toggleModal('gameEnd');
     }
@@ -40,6 +40,7 @@ function increaseDifficulty() {
     var select = document.getElementById('difficulty');
     select.selectedIndex++;
     var event = new Event('change');
+    toggleModal('changeDif');
 
     // Dispatch it.
     select.dispatchEvent(event);
