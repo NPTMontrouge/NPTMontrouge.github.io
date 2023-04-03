@@ -5,8 +5,8 @@ function changeTargetPosition(elem) {
 
     //changement de la postion
     elem.style.position = 'absolute';
-    x = Math.floor(Math.random() * 450) + document.getElementById('practiceZone').offsetLeft;
-    y = Math.floor(Math.random() * 450) + document.getElementById('practiceZone').offsetTop + 150;
+    x = Math.floor(Math.random() * 1000) + document.getElementById('practiceZone').offsetLeft;
+    y = Math.floor(Math.random() * 300) + document.getElementById('practiceZone').offsetTop + 75;
     elem.style.left = x + 'px';
     elem.style.top = y + 'px';
 }
@@ -69,18 +69,25 @@ function setActiveMenuItem(self, id) {
 
     resetDifficlty();
 
-    var links = document.querySelectorAll('.menu-item');
+    var links = document.querySelectorAll('.button-menu, .button-menu-active');
 
     links.forEach(link => {
-        link.classList.remove('menu-item');
+        link.classList.remove('button-menu-active');
+        link.classList.add("button-menu");
     });
 
-    self.classList.add("menu-item");
+    self.classList.add("button-menu-active");
+    self.classList.remove("button-menu");
 
     document.getElementById('score').innerText = 0;
 
+    document.getElementById('practiceZone').classList.remove('disable');
+
 
     document.getElementById('consigne').innerText = self.dataset.consigne;
+    document.getElementById('consigne_gif').src = self.dataset.gif;
+    toggleModal('tuto');
+
 
     return elem
 
@@ -141,18 +148,6 @@ function initDifficulty() {
                 img.style.height = '25px';
                 img.style.width = '25px';
                 break;
-            case 'Difficile+':
-                img.style.height = '12px';
-                img.style.width = '12px';
-                break;
-            case 'Ultime':
-                img.style.height = '6px';
-                img.style.width = '6px';
-                break;
-            case 'Impossible':
-                img.style.height = '3px';
-                img.style.width = '3px';
-                break;
         }
         targetZone.style.height = img.style.height;
         targetZone.style.width = img.style.width;
@@ -161,7 +156,7 @@ function initDifficulty() {
 }
 
 initDifficulty()
-document.getElementsByClassName('item')[0].click();
+// document.getElementsByClassName('item')[0].click();
 document.addEventListener("dragover", function (event) {
     event.preventDefault();
 });

@@ -21,8 +21,8 @@ h1 {
 
 .exercice1 {
     background-color: #ecf0f1;
-    height: 550px;
-    width: 700px;
+    height: 450px;
+    width: 1200px;
 }
 
 
@@ -44,7 +44,7 @@ h1 {
 
 header, .header {
     background-color: #194f9c;
-    height: 10em;
+    height: 5em;
     flex-direction: row;
 }
 
@@ -73,3 +73,35 @@ header .title, .header .title {
 #gameEnd.fade {
     opacity: 0;
 }
+
+#tuto {
+    opacity: 1;
+    transition: opacity 1s;
+    z-index: 100;
+}
+
+#tuto.fade {
+    opacity: 0;
+}
+
+.button-list{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+}
+
+.container{
+    margin-left: 2em;
+    margin-right: 2em;
+}
+
+.button-menu-active{
+  background-color: #f6a334;
+  border-color: #f6a334;
+}
+
+.button-menu{
+    background-color: #194f9c;
+    border-color: #194f9c;
+  }

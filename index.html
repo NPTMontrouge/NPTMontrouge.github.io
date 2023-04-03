@@ -16,7 +16,7 @@
     <header>
         <div class="header row">
             <div class="col col-lg-1">
-                <img src="./assets/Logos NPTM 2022 Icon-Text-01.png" height="100em">
+                <img src="./assets/Logos NPTM 2022 Icon-Text-01.png" height="50em">
             </div>
             <div class="col col-lg-11">
                 <h1 class="title">Exercices souris</h1>
@@ -24,43 +24,31 @@
         </div>
     </header>
     <div class="container">
+        <div class="row button-list">
+            <button class="button-success button-menu" onclick="setClickEvent('target', 'click', this)"
+                data-consigne="L'objectif de l'exercice est d'effectuer un clique gauche sur la cible. À chaque clique réussi, la cible se déplace."
+                data-gif="./assets/clic_gauche.gif">Clique
+                gauche </button>
+            <button class="button-success button-menu" onclick="setClickEvent('target', 'dblclick', this)"
+                data-consigne="L'objectif de l'exercice est d'effectuer un double clique gauche sur la cible. À chaque double clique réussi, la cible se déplace."
+                data-gif="./assets/clic_gauche.gif">Double
+                clique </button>
+            <button class="button-success button-menu" onclick="setClickEvent('target', 'contextmenu', this)"
+                data-consigne="L'objectif de l'exercice est d'effectuer un clique droit sur la cible. À chaque clique droit réussi, la cible se déplace."
+                data-gif="./assets/clic_gauche.gif">Clique droit
+            </button>
+            <button class="button-success button-menu" onclick="setDragDrop('target', 'dropZone', this)"
+                data-consigne="L'objectif de l'exercice est d'effectuer un glisser/déposer de la cible dans le carré noir. À chaque glisser/déposer réussi, la cible et le carré se déplacent."
+                data-gif="./assets/glisser_deposer.gif">Glisser/Déposer </button>
+        </div>
         <div class="row">
-            <div class="col col-lg-3 display-lg-up">
-                <div class="sidebar sidebar-left side-menu">
-                    <h3 class="sidebar-category">Exercices</h3>
-                    <ul class="sidebar-links">
-                        <li class="">
-                            <a href="#" class="item" onclick="setClickEvent('target', 'click', this)"
-                                data-consigne="Effectuez un clique gauche sur la cible">Clique gauche</a>
-                        </li>
-                        <li class="">
-                            <a href="#" class="item" onclick="setClickEvent('target', 'dblclick', this)"
-                                data-consigne="Effectuez un double clique sur la cible">Double-clique</a>
-                        </li>
-                        <li class="">
-                            <a href="#" class="item" onclick="setClickEvent('target', 'contextmenu', this)"
-                                data-consigne="Effectuez un clique droit sur la cible">Clique droit</a>
-                        </li>
-                        <li class="">
-                            <a href="#" class="item" onclick="setDragDrop('target', 'dropZone', this)"
-                                data-consigne="Effectuez un glisser/déposer de la cible dans le carré">Glisser/Déposer</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div id="practiceZone" class="col col-lg-9 row">
-                <div class="col col-lg-12">
-                    <p id="consigne" class="alert alert-info"></p>
-                </div>
+            <div id="practiceZone" class="col col-lg-12 row disable">
                 <div class="col col-lg-3">
                     <form class="">
                         <select id="difficulty">
                             <option class="option-difficulty" value="1" selected>Facile</option>
                             <option class="option-difficulty" value="2">Moyen</option>
                             <option class="option-difficulty" value="3">Difficile</option>
-                            <!-- <option>Difficile+</option>
-                            <option>Ultime</option>
-                            <option>Impossible</option> -->
                         </select>
                     </form>
                 </div>
@@ -73,7 +61,8 @@
 
                 <div class="exercice1">
                     <div class="exercice1">
-                        <img id="target" class="noselect target" src="./assets/iconmonstr-target-3.svg" draggable="true" />
+                        <img id="target" class="noselect target" src="./assets/iconmonstr-target-3.svg"
+                            draggable="true" />
                         <div id="dropZone" class="dropZone disable">
 
                         </div>
@@ -93,6 +82,21 @@
             </div>
             <div class="modal-footer">
                 <button class="button-primary" onclick="toggleModal('gameEnd')">Fermer</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="tuto" class="modal-mask fade disable">
+        <div class="modal">
+            <div class="modal-head">
+                <p class="modal-title">Explication</p>
+            </div>
+            <div class="modal-body">
+                <p id="consigne"></p>
+                <img id="consigne_gif" width="100%">
+            </div>
+            <div class="modal-footer">
+                <button class="button-primary" onclick="toggleModal('tuto')">C'est parti</button>
             </div>
         </div>
     </div>
